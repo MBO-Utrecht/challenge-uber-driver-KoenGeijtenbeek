@@ -37,4 +37,4 @@ Het project maakt gebruik van Unity’s Visual Scripting tool (voorheen bekend a
    - Mogelijkheden voor upgrades zoals sneller rijden of meer brandstofcapaciteit.
 
 5. **Uitbreidingen:**
-   - Toevoeging van extra uitdagingen zoals verkeersopstoppingen, brandstofbeheer, of tijdsdruk.
+   - Toevoeging van extra uitdagingen zoals verkeersopstoppingen, brandstofbeheer, of tijdsdruk .
