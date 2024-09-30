@@ -7,6 +7,7 @@ public class NumberWizard : MonoBehaviour
     int max = 100;
     int min = 1;
     int guess;
+    int guessCounter = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -39,25 +40,41 @@ public class NumberWizard : MonoBehaviour
 
     void NextGuess()
     {
+        guessCounter += 1;
         Debug.Log("Is the number higher or lower than " + guess + "?");
         Debug.Log("Press Up = Higher, Press Down = Lower, Press Enter = Correct");
     }
     void Higher()
     {
-        min = guess;
-        guess = Random.Range(min, max+1);
-        NextGuess();
+        if (guessCounter != 5)
+        {
+            min = guess;
+            guess = Random.Range(min, max+1);
+            NextGuess();
+        } else {
+            FailedFinish();
+        }
     }
 
     void Lower()
     {
-        max = guess;
-        guess = Random.Range(min, max+1);
-        NextGuess();
+        if (guessCounter != 5)
+        {
+            max = guess;
+            guess = Random.Range(min, max+1);
+            NextGuess();
+        } else {
+            FailedFinish();
+        }
     }
 
     void Finish()
     {
-        Debug.Log("Final number: " + guess + "!");
+        Debug.Log("I got it right! Your number was: " + guess);
+    }
+
+    void FailedFinish()
+    {
+        Debug.Log("I failed, you're too good for me :(");
     }
 }
